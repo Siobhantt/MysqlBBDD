@@ -169,7 +169,7 @@ public class ConexionMySql {
 			}
 			archivo.close();
 		} catch (IOException | SQLException e) {
-			e.getMessage();
+			System.out.println(e.getMessage()); 
 		} finally {
 
 		}
@@ -190,7 +190,7 @@ public class ConexionMySql {
 			}
 			archivo.close();
 		} catch (IOException | SQLException e) {
-			e.getMessage();
+			System.out.println(e.getMessage()); 
 		} finally {
 
 		}
@@ -259,7 +259,7 @@ public class ConexionMySql {
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage()); 
 		}
 	}
 
@@ -281,7 +281,7 @@ public class ConexionMySql {
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage()); 
 		}
 	}
 
@@ -302,18 +302,14 @@ public class ConexionMySql {
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage()); 
 		}
 	}
 
 	// =================================================================================================================
 	// METODOS PARA BORRAR LAS TABLAS
 	// =================================================================================================================
-	
-	
-	
-	
-	
+//TODO 
 	// =================================================================================================================
 	// METODOS PARA MODIFICAR LAS TABLAS
 	// =================================================================================================================
@@ -612,7 +608,7 @@ public class ConexionMySql {
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage()); 
 		}
 		return conn;
 	}
