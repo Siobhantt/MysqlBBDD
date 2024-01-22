@@ -136,13 +136,13 @@ public class ConexionMySql {
 	//============================================================================================================================
 	private static void insertMakarooUsuarios() {
 		//C:\Users\lcardozo\git\BBDD\Badat\src\bbdd\Usuarios.sql
-				String rutaArchivo ="C:\\Users\\lcardozo\\git\\BBDD\\Badat\\src\\bbdd\\Usuarios.sql";
+				String rutaArchivo ="src\\bbdd\\Usuarios.sql";
 				String lineaActual="";
 				try {
 					BufferedReader archivo = new BufferedReader(new FileReader(rutaArchivo));
 					Statement stmt = conn.createStatement();
 					while((lineaActual=archivo.readLine())!=null) {
-					stmt.executeQuery(lineaActual);
+					stmt.executeUpdate(lineaActual);
 					}
 					archivo.close();
 				} catch (IOException | SQLException e) {
@@ -155,13 +155,13 @@ public class ConexionMySql {
 	}
 	private static void insertMakarooPosts() {
 		//C:\Users\lcardozo\git\BBDD\Badat\src\bbdd\Usuarios.sql
-		String rutaArchivo ="C:\\Users\\lcardozo\\git\\BBDD\\Badat\\src\\bbdd\\Posts.sql";
+		String rutaArchivo ="src\\bbdd\\Posts.sql";
 		String lineaActual="";
 		try {
 			BufferedReader archivo = new BufferedReader(new FileReader(rutaArchivo));
 			Statement stmt = conn.createStatement();
 			while((lineaActual=archivo.readLine())!=null) {
-				stmt.executeQuery(lineaActual);
+				stmt.executeUpdate(lineaActual);
 			}
 			archivo.close();
 		} catch (IOException | SQLException e) {
@@ -174,13 +174,13 @@ public class ConexionMySql {
 	}
 	private static void insertMakarooLikes() {
 		//C:\Users\lcardozo\git\BBDD\Badat\src\bbdd\Usuarios.sql
-		String rutaArchivo ="C:\\Users\\lcardozo\\git\\BBDD\\Badat\\src\\bbdd\\Likes.sql";
+		String rutaArchivo ="src\\bbdd\\Likes.sql";
 		String lineaActual="";
 		try {
 			BufferedReader archivo = new BufferedReader(new FileReader(rutaArchivo));
 			Statement stmt = conn.createStatement();
 			while((lineaActual=archivo.readLine())!=null) {
-				stmt.executeQuery(lineaActual);
+				stmt.executeUpdate(lineaActual);
 			}
 			archivo.close();
 		} catch (IOException | SQLException e) {
@@ -354,8 +354,10 @@ public class ConexionMySql {
 			Statement stmt = conn.createStatement();
 			if (stmt.executeUpdate(sentencia)==0) {
 				System.out.println("No se ha realizado ninguna actualizacion.");
+			}else {
+				System.out.println("Tabla actualizada.");
 			}
-			System.out.println("Tabla actualizada.");
+			
 		}catch (SQLException e) {
 			//System.out.println("Error en el formato del campo: "+e.toString());
 			System.out.println("Se ha producido un error:");
@@ -397,8 +399,10 @@ public class ConexionMySql {
 			Statement stmt = conn.createStatement();
 			if (stmt.executeUpdate(sentencia)==0) {
 				System.out.println("No se ha realizado ninguna actualizacion.");
+			}else {
+				System.out.println("Tabla actualizada.");
 			}
-			System.out.println("Tabla actualizada.");
+			
 		}catch (SQLException e) {
 			//System.out.println("Error en el formato del campo: "+e.toString());
 			System.out.println("Se ha producido un error:");
@@ -436,8 +440,10 @@ public class ConexionMySql {
 			Statement stmt = conn.createStatement();
 			if (stmt.executeUpdate(sentencia)==0) {
 				System.out.println("No se ha realizado ninguna actualizacion.");
+			}else {
+				System.out.println("Tabla actualizada.");
 			}
-			System.out.println("Tabla actualizada.");
+			
 		}catch (SQLException e) {
 			//System.out.println("Error en el formato del campo: "+e.toString());
 			System.out.println("Se ha producido un error:");
@@ -554,7 +560,7 @@ public class ConexionMySql {
 				+ "    idUsuarios INT PRIMARY KEY,\r\n"
 				+ "    Nombre VARCHAR(45),\r\n"
 				+ "    Apellidos VARCHAR(45),\r\n"
-				+ "    Username VARCHAR(12),\r\n"
+				+ "    Username VARCHAR(30),\r\n"
 				+ "    Password VARCHAR(128),\r\n"
 				+ "    email VARCHAR(50)\r\n"
 				+ ");";
@@ -583,7 +589,9 @@ public class ConexionMySql {
 			stmt.executeUpdate(tabla1);
 			stmt.executeUpdate(tabla2);
 			stmt.executeUpdate(tabla3);
+			
 		} catch (SQLException e) {
+			
 			System.out.println("La tabla que desea crear ya existe.");
 		}
 		
