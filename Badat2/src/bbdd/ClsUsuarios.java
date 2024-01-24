@@ -34,7 +34,7 @@ public class ClsUsuarios {
 	
 	public static void insertMakarooUsuarios() {
 		// C:\Users\lcardozo\git\BBDD\Badat\src\bbdd\Usuarios.sql
-		String rutaArchivo = "src\\bbdd\\Usuarios.sql";
+		String rutaArchivo = "src\\sqls\\Usuarios.sql";
 		String lineaActual = "";
 		try {
 			BufferedReader archivo = new BufferedReader(new FileReader(rutaArchivo));

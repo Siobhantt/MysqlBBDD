@@ -37,7 +37,7 @@ public class ClsLikes {
 
 	public static void insertMakarooLikes() {
 		// C:\Users\lcardozo\git\BBDD\Badat\src\bbdd\Usuarios.sql
-		String rutaArchivo = "src\\bbdd\\Likes.sql";
+		String rutaArchivo = "src\\sqls\\Likes.sql";
 		String lineaActual = "";
 		try {
 			BufferedReader archivo = new BufferedReader(new FileReader(rutaArchivo));

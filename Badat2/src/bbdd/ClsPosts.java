@@ -35,7 +35,7 @@ public class ClsPosts {
 
 	public static void insertMakarooPosts() {
 		// C:\Users\lcardozo\git\BBDD\Badat\src\bbdd\Usuarios.sql
-		String rutaArchivo = "src\\bbdd\\Posts.sql";
+		String rutaArchivo = "src\\sqls\\Posts.sql";
 		String lineaActual = "";
 		try {
 			BufferedReader archivo = new BufferedReader(new FileReader(rutaArchivo));
