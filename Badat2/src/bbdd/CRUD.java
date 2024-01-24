@@ -1,7 +1,28 @@
 package bbdd;
 
-public class CRUD {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
+public class CRUD {
+	public static Connection conectar() {
+		// jdbc:mysql/+ servidor + : + puerto/ + base de datos
+		String url = "jdbc:mysql://dns11036.phdns11.es:3306/ad2324_lcardozo";
+		String user = "luisa.cardozo";
+		String pass = "12345";
+		Connection conn = null;
+
+		try {
+			conn = DriverManager.getConnection(url, user, pass);
+			// Si la conexion esta abierta...
+			if (!conn.isClosed()) {
+				System.out.println("Conexion exitosa (:");
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return conn;
+	}
 
 	public static void insertarAll() {
 		int opcInsert;
